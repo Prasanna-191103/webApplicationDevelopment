@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            body {
+                background-color: #ACF0ED;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .login-container {
+                width:600px;
+                padding: 150px;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .logo-image {
+                max-width: 100%;
+                height: auto;
+                border-radius: 50%;
+                margin-bottom: 25px;
+                margin-right: 10px;
+                margin-left: 30px;
+            }
+
+            .loginButton {
+                cursor: pointer;
+                margin-left: 110px;
+                margin-top: 20px;
+                align-items: center;
+                justify-content: center;
+                padding: 3.5px;
+            }
+        </style>
+    </h:head>
+    <h:body styleClass="Bimage">
+        <div class="login-container">
+            <h:graphicImage styleClass="logo-image" library ="images" name="tce.png" alt="Logo" />
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="User_id:" />
+                    <h:inputText id="user_id" value="#{loginCls.lbn.user_id}" required="true" />
+
+                    <h:outputLabel value="Password:" />
+                    <h:inputSecret id="password" value="#{loginCls.lbn.password}"  required="true" />
+                </h:panelGrid>
+                <h:commandButton value="Login" action="#{loginCls.login()}" styleClass="loginButton"/>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
+

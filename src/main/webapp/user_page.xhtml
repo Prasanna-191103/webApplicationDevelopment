@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title> user page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+
+         
+            h:form {
+                max-width: 600px;
+                margin: 20px auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+           
+            h:panelGrid {
+                margin-bottom: 15px;
+            }
+
+           
+            h:outputLabel {
+                display: block;
+                margin-bottom: 5px;
+                color: #333;
+            }
+
+           
+            h:inputText,
+            h:inputSecret {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+                h:commandButton {
+                background-color: #4caf50;
+                color: #fff;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .card {
+                margin-top: 20px;
+            }
+            p:dataTable {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px;
+            }
+            p:column {
+                padding: 10px;
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+            @media screen and (max-width: 600px) {
+                p:dataTable {
+                    overflow-x: auto;
+                    display: block;
+                }
+
+                p:column {
+                    white-space: nowrap;
+                }
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="6">
+
+                <h:outputLabel value="User_id:" />
+                <h:inputText id="user_id" value="#{userCls.lbnn.user_id}" required="true" />
+
+                <h:outputLabel value="Username:" />
+                <h:inputText id="username" value="#{userCls.lbnn.username}" required="true" />
+
+                <h:outputLabel value="Password:" />
+                <h:inputSecret id="password" value="#{userCls.lbnn.password}" required="true" />
+
+                <h:outputLabel value="Phone number" />
+                <h:inputText id="phone_no" value="#{userCls.lbnn.phone_no}" required="true" />
+
+                <h:outputLabel value="Place:" />
+                <h:inputText id="place" value="#{userCls.lbnn.place}" required="true" />
+
+                <h:outputLabel value="Pin:" />
+                <h:inputText id="pin" value="#{userCls.lbnn.pin}" required="true" />
+
+                <h:commandButton value="Submit" action="#{userCls.submit()}" styleClass="submitButton"/>
+                <h:commandButton value="Update" action="#{userCls.update()}" styleClass="updateButton"/>
+                <h:commandButton value="Delete" action="#{userCls.delete()}" styleClass="deleteButton"/>
+                <h:commandButton value="Display" action="#{userCls.display()}" styleClass="displayButton"/>
+            </h:panelGrid>
+        </h:form>
+
+        <div class="card">
+            <p:dataTable widgetVar="dt-products" var="product" value="#{userCls.perInfoAll}">
+                <p:column headerText="user_id">
+                    <h:outputText value="#{product.user_id}" />
+                </p:column>
+
+                <p:column headerText="username">
+                    <h:outputText value="#{product.username}" />
+                </p:column>
+
+                <p:column headerText="password">
+                    <h:outputText value="#{product.password}" />
+                </p:column>
+
+                <p:column headerText="phone_no">
+                    <h:outputText value="#{product.phone_no}" />
+                </p:column>
+
+                <p:column headerText="password">
+                    <h:outputText value="#{product.password}" />
+                </p:column>
+
+                <p:column headerText="pin">
+                    <h:outputText value="#{product.pin}" />
+                </p:column>
+            </p:dataTable>
+        </div>
+
+    </h:body>
+</html>

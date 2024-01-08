@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+
+    <h:body>
+        
+          <p:dataTable  var="userVal" value="#{userCls.perInfoAll}">
+                            <p:column headerText="user id">
+                                <h:outputText value="#{userVal.user_id}" />
+                            </p:column>
+
+                            <p:column headerText="username">
+                                <h:outputText value="#{userVal.username}" />
+                            </p:column>
+
+                            <p:column headerText="password">
+                                <h:outputText value="#{userVal.password}" />
+                            </p:column>
+
+                            <p:column headerText="phone_no">
+                                <h:outputText value="#{userVal.phone_no}" />
+                            </p:column>
+
+                            <p:column headerText="place">
+                                <h:outputText value="#{userVal.place}" />
+                            </p:column>
+
+                            <p:column headerText="pin">
+                                <h:outputText value="#{userVal.pin}" />
+                            </p:column>
+                        </p:dataTable>
+       <div class="card">
+           <p:dataTable widgetVar="dtProducts" var="userVal" value="#{loginBean.perInfoAll}">
+            <p:column headerText="user id">
+                <h:outputText value="#{userVal.user_id}" />
+            </p:column>
+
+            <p:column headerText="username">
+                <h:outputText value="#{userVal.username}" />
+            </p:column>
+
+            <p:column headerText="password">
+                <h:outputText value="#{userVal.password}" />
+            </p:column>
+
+            <p:column headerText="phone_no">
+                <h:outputText value="#{userVal.phone_no}" />
+            </p:column>
+               
+            <p:column headerText="place">
+                <h:outputText value="#{userVal.place}" />
+            </p:column>
+               
+            <p:column headerText="pin">
+                <h:outputText value="#{userVal.pin}" />
+            </p:column>
+        </p:dataTable>
+    </div>
+    </h:body>
+</html>
