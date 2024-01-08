@@ -1,0 +1,38 @@
+<!-- /success.xhtml -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Login Successful</title>
+</h:head>
+    <style>
+        body{
+            background-color: #A8F392;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    </style>
+<h:body>
+    <div class="upload-container">
+        <h:form enctype="multipart/form-data">
+            <h2>Upload Page</h2>
+            
+            <h:outputLabel value="Select file:" />
+            <h:inputFile value="#{uploadFileBean.uploadedFile}" required="true" />
+            <br/>
+            <h:commandButton value="Upload" action="#{UploadFileBean.saveFile}" />
+             <p:growl id="messages" showDetail="true" />
+
+            <!-- Optionally, you can include a message to indicate successful login -->
+            <h:outputText rendered="#{sessionScope.success}">
+                Welcome, #{sessionScope.username}! You are on the upload page.
+            </h:outputText>
+        </h:form>
+    </div>
+</h:body>
+</html>

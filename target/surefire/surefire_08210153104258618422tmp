@@ -1,0 +1,8 @@
+#surefire_0
+#Sat Jan 06 09:24:32 IST 2024
+basedir=C\:\\Users\\prasa\\OneDrive\\Desktop\\sample project\\datastore
+netbeans.deploy=true
+user.dir=C\:\\Users\\prasa\\OneDrive\\Desktop\\sample project\\datastore
+netbeans.deploy.clientUrlPart=/faces/user_page.xhtml
+maven.ext.class.path=C\:\\Program Files\\NetBeans-13\\netbeans\\java\\maven-nblib\\netbeans-eventspy.jar
+localRepository=C\:\\Users\\prasa\\.m2\\repository

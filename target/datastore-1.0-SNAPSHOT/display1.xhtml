@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Your JSF Page</title>
+    </h:head>
+    <h:body>
+        <h2>Data Table Example</h2>
+
+        <p:dataTable var="user" value="#{userCls.perInfoAll}">
+            <!-- Define columns -->
+            <p:column headerText="User ID">
+                <h:outputText value="#{user.user_id}" />
+            </p:column>
+            <p:column headerText="Username">
+                <h:outputText value="#{user.username}" />
+            </p:column>
+          
+
+        </p:dataTable>
+    </h:body>
+</html>
